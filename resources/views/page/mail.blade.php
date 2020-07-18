@@ -1,0 +1,1 @@
+Tên người gửi: {{$hoten}}    Nội dung: {{$tinnhan}}

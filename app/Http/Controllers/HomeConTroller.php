@@ -190,30 +190,47 @@ class HomeConTroller extends Controller
         {
                    return redirect('quen-mat-khau')->with('message', 'Email không tồn tại');       
         } 
-        $code = bcrypt(md5(time().'$email'));
-        
-        $checkUser->remember_token=$code;
-        $checkUser->created_at=Carbon::now();
-        $checkUser->save();
-        return redirect('quen-mat-khau')->with('message','Link đã được gửi vào email của bạn !');
+        $code =$checkUser->remember_token;
 
-        $url = route('get.link.reset.password',['remember_token'=>$checkUser->code,'email'=>$email]);
+    
+        $url = url('password-reset')."/".$code;
         $data=[
             'route'=>$url
-        ]
-            ;
+        ];
 
         Mail::send('page.forgot', $data, function($message) use ($email){
             $message->to($email, 'Reset Password')->subject('Lấy lại mật khẩu');
         });
-    
+        return redirect('quen-mat-khau')->with('message','Link đã được gửi vào email của bạn !');
 
     }
-    public function resetPassword(){
-       
-        $email=User::all();
-        return view('page.reset');
+    public function getresetPassword($code){       
+        return view('page.reset',['code'=>$code]);
     }
+    public function resetPassword($code,Request $request){       
+
+        $this->validate($request,
+            [
+                'password' => 'required|min:6|max:32',
+                'password_again' => 'required|same:password'
+            ],
+            [
+                'password.required' => 'Bạn chưa nhập mật khẩu!',
+                'password.min' => 'Mật khẩu gồm tối thiểu 6 ký tự!',
+                'password.max' => 'Mật khẩu không được vượt quá 32 ký tự!',
+                'password_again.required' => 'Bạn chưa xác nhận mật khẩu!',
+                'password_again.same' => 'Mật khẩu xác nhận chưa khớp với mật khẩu đã nhập!'
+            ]);
+
+        
+
+        $user = User::where('remember_token',$code)->first();
+        $user->password = bcrypt($request->password);
+            
+        $user->save();
+        return redirect()->back()->with('message','Thay Đổi mật khẩu thành công!');
+    }
+
 
     public function Search(Request $request){
     	$keyword = $request->keyword;

@@ -11,7 +11,7 @@
            <div class="col-xs-6 col-md-3">
             <h6>Quick Links</h6>
             <ul class="footer-links">
-              <li><a href="home">Trang chủ </a></li>
+              <li><a href="{{ url('/') }}">Trang chủ </a></li>
               <li><a href="gioi-thieu">Giới thiệu</a></li>
               <li><a href="lien-he">Liên hệ</a></li>
               <li><a href="dang-ky-tai-khoan">Đăng ký</a></li>

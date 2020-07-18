@@ -24,7 +24,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-4 col-md-offset-4">
+            <div class="col-md-6 col-md-offset-3">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title text-center">TRANG ĐĂNG NHẬP</h3>
@@ -47,12 +47,14 @@
                             {{ csrf_field() }}
                             <fieldset>
                                 <div class="form-group">
+                                    <label>Địa chỉ mail:</label>
                                     <input class="form-control" placeholder="Địa chỉ Email" name="email" type="email" autofocus>
                                 </div>
                                 <div class="form-group">
+                                     <label>Mật khẩu:</label>
                                     <input class="form-control" placeholder="Mật Khẩu" name="password" type="password" value="">
                                 </div>
-                                <button type="submit" class="btn btn-lg btn-success btn-block">Đăng Nhập</button>
+                                <button type="submit" class="btn btn-lg btn-success btn-block"><span class= "glyphicon glyphicon-log-in"></span> Đăng Nhập</button>
                             </fieldset>
                         </form>
                     </div>

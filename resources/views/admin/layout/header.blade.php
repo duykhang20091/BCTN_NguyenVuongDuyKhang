@@ -6,7 +6,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="admin"><span class="font-title">NewsOnline/Trang Quản Trị</span></a>
+                <a class="navbar-brand" href="{{ url('/') }}"><span class="font-title">NewsOnline/Trang Quản Trị</span></a>
             </div>
             
 

@@ -31,9 +31,7 @@
 						@csrf
 						
 						<div>
-							
-							<input id="email" type="email" class="form-control {{$errors->has('email')? 'is-invalid' :''}}"value="{{old('email')}}" placeholder="Nhập Địa Chỉ Email" name="email" 
-							>
+							<input id="email" type="email" class="form-control {{$errors->has('email')? 'is-invalid' :''}}"value="{{old('email')}}" placeholder="Nhập Địa Chỉ Email" name="email">
 							
 						</div>
 						

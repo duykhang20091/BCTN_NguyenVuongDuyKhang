@@ -41,7 +41,9 @@ Route::get('quen-mat-khau','HomeController@ForgotPassword');
 
 Route::post('quen-mat-khau','HomeController@sendCodeResetPassword');
 
-Route::get('password-reset','HomeController@resetPassword')->name('get.link.reset.password');
+Route::get('password-reset/{code}','HomeController@getresetPassword');
+
+Route::post('password-reset/{code}','HomeController@resetPassword')->name('reset');
 
 Route::get('tim-kiem','HomeController@Search');
 

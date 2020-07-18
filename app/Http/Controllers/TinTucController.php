@@ -105,7 +105,7 @@ class TinTucController extends Controller
     		]);
 
     	$tintuc->TieuDe = $request->article_title;
-    	$tintuc->TieuDeKhongDau = changeTitle($request->article_title);
+    	$tintuc->TieuDeKhongDau = $request->article_title;
     	$tintuc->TomTat = $request->article_desc;
     	$tintuc->NoiDung = $request->article_content;
 

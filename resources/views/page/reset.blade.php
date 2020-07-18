@@ -8,52 +8,40 @@
 <!-- Page Content -->
 <div class="container">
 
-	<!-- slider -->
 	<div class="row carousel-holder">
 		<div class="col-md-2">
 		</div>
 		<div class="col-md-8">
 			<div class="panel panel-default">
-			<div class="panel-heading"><h4>Reset Password</h4></div>
+			<div class="panel-heading"><h4>Đặt lại mật khẩu</h4></div>
 				
-					@if(count($errors) > 0)
-                        @foreach($errors->all() as $err)
-                            <div class="alert alert-danger">
-                                <strong>{{ $err }}</strong><br/>
-                            </div>
-                        @endforeach
-                    @endif
+						@if(session('danger'))
+                            <div class="alert alert-danger error-sec">
+							<strong>{{ session('danger') }}</strong>
+						</div>
+					@endif
 				
 					@if(session('message'))
 						<div class="alert alert-success">
 							<strong>{{ session('message') }}</strong>
 						</div>
 					@endif
-					<form method="POST" action="quan-ly-thong-tin">
+					<form method="POST" action="{{route('reset',['code'=>$code])}}">
 						{{ csrf_field() }}
-						
-						</div>
-						<div>
-							<label>Email</label>
-							<input id="email" type="email" class="form-control {{$errors->has('email')? 'is-invalid' :''}}"value="{{old('email')}}" placeholder="Nhập Địa Chỉ Email" name="email" 
-							@if($errors->has('email'))
-							<span class="invalid-feedback"role="alert">
-								<strong>{{$errors->first('email') }}</strong>
-							</span>
-							@endif
-						</div>
 						<br>	
 						<div>
-							<label>Mật khẩu</label>
-							<input type="password" class="form-control" name="password" aria-describedby="basic-addon1" placeholder="Nhập Mật Khẩu">
-						</div>
+								
+				    			<label>Mật khẩu</label>
+							  	<input type="password" class="form-control password"  name="password" aria-describedby="basic-addon1">
+							</div>
+							<br>
+							<div>
+				    			<label>Nhập lại mật khẩu</label>
+							  	<input type="password" class="form-control password"  name="password_again" aria-describedby="basic-addon1">
+							</div>
+							
 						<br>
-						<div>
-							<label>Xác Nhận mật khẩu</label>
-							<input type="password" class="form-control" name="password_again" aria-describedby="basic-addon1" placeholder="Nhập lại Mật Khẩu">
-						</div>
-						<br>
-						<button type="submit" class="btn btn-primary">Reset Password
+						<button type="submit" class="btn btn-primary">Xác nhận
 						</button>
 						
 					</form>

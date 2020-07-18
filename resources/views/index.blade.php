@@ -54,8 +54,8 @@
     <div style="text-align: left;" id="myModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-login">
 
-           
-            <div class="panel panel-default">
+                <div class="csdsdd"style="width: 600px">
+                <div class="panel panel-default">
                 <div class="panel-heading"><h4>Đăng nhập</h4></div>
                 <div class="panel-body">
 
@@ -73,17 +73,18 @@
                         </div>
                         <br>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Đăng nhập
+                            <button style="width: 100%;margin:auto"  type="submit" class="btn btn-primary">Đăng nhập
                             </button>    
                         </div>
-                        <div class="form-group" style="margin-bottom: 3em;">
-                            <a href="">Quên Mật Khẩu?</a>    
+                       <div class="form-group" style="text-align: right; margin-bottom: 3em;">
+                            <a href="quen-mat-khau">Quên Mật Khẩu?</a>    
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+</div>
     
     <script src="js/jquery.js"></script>
     <script src="theme.js"></script>

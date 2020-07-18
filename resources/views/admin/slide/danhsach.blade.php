@@ -23,7 +23,6 @@
                                 <th class="text-center">Tên Slide</th>
                                 <th class="text-center">Nội Dung Slide</th>
                                 <th class="text-center">Hình</th>
-                                <th class="text-center">Link</th>
                                 <th class="text-center">Sửa</th>
                                 <th class="text-center">Xóa</th>
                             </tr>
@@ -37,7 +36,6 @@
                                     <td>
                                         <img class="responsive" style="width: 100px;height: 100px;" src="upload/slide/{{ $chitiet->Hinh }}">
                                     </td>
-                                    <td>{{ $chitiet->link }}</td>
                                     <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/slide/sua/{{ $chitiet->id }}">Sửa</a></td>
                                     <td class="center">
                                         <i class="fa fa-trash-o  fa-fw"></i>
